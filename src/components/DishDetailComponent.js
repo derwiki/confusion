@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
+    formatDate(date) {
+        // formats like Jan XX, XXXX
+        return new Date(date)
+                 .toLocaleDateString('en-EN', {weekday: undefined, month: 'short', day: 'numeric', year: 'numeric' })
+    }
+
     renderComments(comments) {
         if (comments) {
             const renderedComments = comments.map((comment) => {
                 return (
-                    <li>
+                    <li key={comment.id}>
                         {/* it's technically invalid to include <div> inside <li> (because they're both block elements), but it works */}
                         <div>{comment.comment}</div>
                         <div className='m-2'>
-                            — {comment.author}, {comment.date}
+                            — {comment.author}, {this.formatDate(comment.date)}
                         </div>
                     </li>
                 )
