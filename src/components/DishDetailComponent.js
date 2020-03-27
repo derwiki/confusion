@@ -39,7 +39,7 @@ class DishDetail extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <div className="col-12 col-md-5 m-1">
                     <Card>
                         <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
@@ -52,7 +52,7 @@ class DishDetail extends Component {
                 <div className="col-12 col-md-5 m-1">
                     {this.renderComments(this.props.dish.comments)}
                 </div>
-            </React.Fragment>
+            </>
         )
     }
 }
