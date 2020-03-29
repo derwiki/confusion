@@ -22,9 +22,7 @@ class Menu extends Component {
                 <DishDetail dish={dish} />
             )
         } else {
-            return (
-                <div />
-            )
+            return null;
         }
     }
 
