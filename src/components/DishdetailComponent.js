@@ -39,23 +39,28 @@ class DishDetail extends Component {
 
     render() {
         const { dish } = this.props;
+        if (!dish) {
+            return null;
+        }
         const { image, name, description, comments } = dish;
 
         return (
-            <>
-                <div className="col-12 col-md-5 m-1">
-                    <Card>
-                        <CardImg width="100%" src={image} alt={name} />
-                        <CardBody>
-                            <CardTitle>{name}</CardTitle>
-                            <CardText>{description}</CardText>
-                        </CardBody>
-                    </Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        <Card>
+                            <CardImg width="100%" src={image} alt={name} />
+                            <CardBody>
+                                <CardTitle>{name}</CardTitle>
+                                <CardText>{description}</CardText>
+                            </CardBody>
+                        </Card>
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderComments(comments)}
+                    </div>
                 </div>
-                <div className="col-12 col-md-5 m-1">
-                    {this.renderComments(comments)}
-                </div>
-            </>
+            </div>
         )
     }
 }
