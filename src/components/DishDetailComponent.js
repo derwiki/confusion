@@ -31,7 +31,9 @@ class DishDetail extends Component {
                 </div>
             )
         } else {
-            return null;
+            return (
+                <div />
+            )
         }
     }
 
