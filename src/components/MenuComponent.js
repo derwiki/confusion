@@ -39,6 +39,7 @@ class Menu extends Component {
                 </div>
             );
         });
+        const { selectedDish } = this.state;
 
         return (
             <div className="container">
@@ -46,7 +47,7 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    {this.renderDish(this.state.selectedDish)}
+                    {selectedDish && <DishDetail dish={selectedDish} />}
                 </div>
             </div>
         );

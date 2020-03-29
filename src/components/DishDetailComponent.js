@@ -36,19 +36,22 @@ class DishDetail extends Component {
     }
 
     render() {
+        const { dish } = this.props;
+        const { image, name, description, comments } = dish;
+
         return (
             <>
                 <div className="col-12 col-md-5 m-1">
                     <Card>
-                        <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
+                        <CardImg width="100%" src={image} alt={name} />
                         <CardBody>
-                            <CardTitle>{this.props.dish.name}</CardTitle>
-                            <CardText>{this.props.dish.description}</CardText>
+                            <CardTitle>{name}</CardTitle>
+                            <CardText>{description}</CardText>
                         </CardBody>
                     </Card>
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    {this.renderComments(this.props.dish.comments)}
+                    {this.renderComments(comments)}
                 </div>
             </>
         )
