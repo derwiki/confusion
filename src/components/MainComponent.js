@@ -24,8 +24,6 @@ class Main extends Component {
   }
 
   render() {
-    const { dishes, selectedDish } = this.state;
-
     const HomePage = () => {
         return (
             <Home
